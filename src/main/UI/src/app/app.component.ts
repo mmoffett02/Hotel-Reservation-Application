@@ -15,11 +15,11 @@ import {map} from "rxjs/operators";
 })
 export class AppComponent implements OnInit{
 
-  // B1 - Code to print the welcome message in French and English on the site
+  // C1B - Code to print the welcome message in French and English on the site
   welcomeMessageEnglish$!: Observable<string>
   welcomeMessageFrench$!: Observable<string>
 
-  // B3 - Code to announce the presentation w/ time zone conversions
+  // C3B - Code to announce the presentation w/ time zone conversions
   announcePresentation$!: Observable<string>
 
   constructor(private httpClient:HttpClient){}
@@ -37,11 +37,11 @@ export class AppComponent implements OnInit{
 
   ngOnInit(){
 
-    // B1 - Code to print the welcome message in French and English on the site
+
     this.welcomeMessageFrench$ = this.httpClient.get(this.baseURL + '/welcome?lang=fr-CA', {responseType: 'text'} )
     this.welcomeMessageEnglish$ = this.httpClient.get(this.baseURL + '/welcome?lang=en-US', {responseType: 'text'} )
 
-    // B3 - Code to add conference announcement
+
     this.announcePresentation$ = this.httpClient.get(this.baseURL + '/presentation', {responseType: 'text'} )
 
     this.roomsearch= new FormGroup({
@@ -67,7 +67,7 @@ export class AppComponent implements OnInit{
       rooms => {
         console.log(Object.values(rooms)[0]);
         this.rooms=<Room[]>Object.values(rooms)[0];
-        // B2 - Code to add the CAD/EUR "prices"
+        // C2 - Code to add the CAD/EUR "prices"
         this.rooms.forEach( room => { room.priceCAD = room.price; room.priceEUR = room.price})
       }
     );
@@ -117,7 +117,7 @@ export interface Room{
   id:string;
   roomNumber:string;
   price:string;
-  // B2 - Code to add the CAD/EUR "prices"
+
   priceCAD:string;
   priceEUR:string;
   links:string;
