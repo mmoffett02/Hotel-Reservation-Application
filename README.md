@@ -21,3 +21,14 @@ Added functionality to display the time for an online live presentation held at 
 
 ### Endpoints
 - `/presentation`: Displays a message stating the presentation time in ET, MT, and UTC.
+
+### Part C1: Dockerfile Creation and Docker Image Build
+For part C1, we created a Dockerfile to containerize the application and built a Docker image.
+
+#### Dockerfile
+```dockerfile
+FROM openjdk:11
+COPY ./target/D387_sample_code-0.0.2-SNAPSHOT.jar /usr/src/D387_sample_code-0.0.2-SNAPSHOT.jar
+WORKDIR /usr/src
+EXPOSE 8080
+CMD ["java", "-jar", "D387_sample_code-0.0.2-SNAPSHOT.jar"]
