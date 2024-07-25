@@ -23,6 +23,7 @@ Added functionality to display the time for an online live presentation held at 
 - `/presentation`: Displays a message stating the presentation time in ET, MT, and UTC.
 
 ### Part C1: Dockerfile Creation and Docker Image Build
+
 For part C1, we created a Dockerfile to containerize the application and built a Docker image.
 
 #### Dockerfile
@@ -32,3 +33,22 @@ COPY ./target/D387_sample_code-0.0.2-SNAPSHOT.jar /usr/src/D387_sample_code-0.0.
 WORKDIR /usr/src
 EXPOSE 8080
 CMD ["java", "-jar", "D387_sample_code-0.0.2-SNAPSHOT.jar"]
+
+
+
+#### Part C2: Testing the Dockerfile 
+## Testing the Dockerfile
+
+To test the Dockerfile, the following steps were performed:
+
+1. A Docker image was created using the Dockerfile.
+2. The Docker image was run in a container named `D387_012029134`.
+3. The application was verified to be running by accessing `http://localhost:8080`.
+
+### Docker Container Running
+
+![Docker Container Running](screenshots/docker_run.png)
+
+### Application UI Running
+
+![Application UI Running](screenshots/d387app.png)
