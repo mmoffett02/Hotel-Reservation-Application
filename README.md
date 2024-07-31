@@ -1,54 +1,44 @@
-# D387 Advanced Java
+# Hotel Reservation Application
 
-## Project Information
-**Student ID:** 012029134
+## Overview
 
-## Part B1: Localization and Internationalization
-### Description
-Modified the Landon Hotel scheduling application to display a welcome message in both English and French by creating resource bundles and applying them using different threads for each language.
+The Hotel Reservation Application is a comprehensive project designed to manage hotel reservations with enhanced features such as localization, internationalization, multithreading, and Docker containerization. This application is developed using Java with the Spring Framework for the backend, and Angular for the frontend, ensuring a robust and scalable architecture.
 
-### Endpoints
-- `/welcome?lang=en`: Displays welcome message in English
-- `/welcome?lang=fr`: Displays welcome message in French
+## Project Description
 
-## Part B2: Display Prices in Different Currencies
-### Description
-Modified the front end to display the price for a reservation in U.S. dollars (USD), Canadian dollars (CAD), and euros (EUR) on different lines.
+This application was developed as part of a software development course to meet new requirements under new management for the Landon Hotel scheduling application. The project includes various functionalities such as displaying welcome messages in multiple languages, showing prices in different currencies, and displaying times for events in various time zones. The project is containerized using Docker for easy deployment and scalability.
 
-## Part B3: Time Zone Conversion for Presentation
-### Description
-Added functionality to display the time for an online live presentation held at the Landon Hotel in Eastern Time (ET), Mountain Time (MT), and Coordinated Universal Time (UTC).
+### Key Features
 
-### Endpoints
-- `/presentation`: Displays a message stating the presentation time in ET, MT, and UTC.
+1. **Multithreaded Localization and Internationalization**:
+   - The application displays a welcome message in both English and French using resource bundles.
+   - Each language's welcome message is displayed using a different thread to demonstrate multithreading.
 
-### Part C1: Dockerfile Creation and Docker Image Build
+2. **Currency Display**:
+   - The front end displays the price for a reservation in U.S. dollars ($), Canadian dollars (C$), and euros (€) on different lines.
 
-For part C1, we created a Dockerfile to containerize the application and built a Docker image.
+3. **Time Zone Conversion**:
+   - A Java method converts times between Eastern Time (ET), Mountain Time (MT), and Coordinated Universal Time (UTC).
+   - The application displays a message showing the time for an online live presentation in all three time zones.
 
-#### Dockerfile
-```dockerfile
-FROM openjdk:11
-COPY ./target/D387_sample_code-0.0.2-SNAPSHOT.jar /usr/src/D387_sample_code-0.0.2-SNAPSHOT.jar
-WORKDIR /usr/src
-EXPOSE 8080
-CMD ["java", "-jar", "D387_sample_code-0.0.2-SNAPSHOT.jar"]
+4. **Docker Containerization**:
+   - The application is containerized using Docker.
+   - A Dockerfile is provided to create a single image that includes all code and modifications.
+   - Instructions and a screenshot for running the Docker image in a container are provided.
 
+### Technologies Used
 
+- **Spring Framework**: For building the Java backend.
+- **Angular**: For the front-end interface.
+- **Spring Data JPA**: For interacting with the relational database.
+- **MySQL**: As the database to store reservation data.
+- **JUnit**: For unit testing the application.
+- **Lombok**: To reduce boilerplate code in Java.
+- **Docker**: For containerizing the application.
 
-#### Part C2: Testing the Dockerfile 
-## Testing the Dockerfile
+### How to Run the Application
 
-To test the Dockerfile, the following steps were performed:
-
-1. A Docker image was created using the Dockerfile.
-2. The Docker image was run in a container named `D387_012029134`.
-3. The application was verified to be running by accessing `http://localhost:8080`.
-
-### Docker Container Running
-
-![Docker Container Running](screenshots/docker_run.png)
-
-### Application UI Running
-
-![Application UI Running](screenshots/d387app.png)
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/mmoffett02/Hotel-Reservation-Application.git
+   cd Hotel-Reservation-Application
