@@ -42,3 +42,46 @@ This application was developed as part of a software development course to meet 
    ```bash
    git clone https://github.com/mmoffett02/Hotel-Reservation-Application.git
    cd Hotel-Reservation-Application
+Set Up the Database:
+
+Ensure MySQL is installed and running.
+Create a database named hotel_reservation.
+Configure the Application:
+
+Update the application.properties file with your database connection details.
+Run the Application:
+
+
+./mvnw spring-boot:run
+Access the Front End:
+
+Open your browser and navigate to the front-end URL (e.g., http://localhost:8080).
+How to Run the Docker Container
+Build the Docker Image:
+
+
+docker build -t hotel-reservation-application .
+Run the Docker Container:
+
+
+docker run -d -p 8080:8080 --name D387_[student ID] hotel-reservation-application
+Access the Application:
+
+Open your browser and navigate to the front-end URL (e.g., http://localhost:8080).
+Cloud Deployment
+To deploy the current multithreaded Spring application to the cloud, the following steps can be taken:
+
+Choose a Cloud Service Provider:
+
+Example: Amazon Web Services (AWS), Google Cloud Platform (GCP), or Microsoft Azure.
+Set Up a Cloud Environment:
+
+Create an account and set up a virtual machine or container service (e.g., AWS EC2, GCP Compute Engine, or Azure Container Instances).
+Deploy the Docker Container:
+
+Push the Docker image to a container registry (e.g., Docker Hub, AWS ECR, GCP Container Registry).
+Pull the Docker image in the cloud environment and run it.
+
+Conclusion
+This project demonstrates the ability to develop and customize a hotel reservation application using modern frameworks and technologies, including Spring, Angular, and Docker. It showcases skills in both front-end and back-end development, multithreading, and containerization, making it a valuable addition to any developer's portfolio.
+
